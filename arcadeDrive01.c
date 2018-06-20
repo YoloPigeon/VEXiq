@@ -16,10 +16,10 @@
 
 task main()
 {
-	repeat(forever)
+	while(true)
 	{
 		//Set the speed of the two motors the value from the two joystick values in the formula.
-		setMotorSpeed(leftMotor,  (getJoystickValue(ChA) + getJoystickValue(ChB))/2);  	// (y - x)/2
-		setMotorSpeed(rightMotor, (getJoystickValue(ChA) - getJoystickValue(ChB))/2);  	// (y + x)/2
+		setMotorSpeed(leftMotor,  (getJoystickValue(ChA) - getJoystickValue(ChB))/2);  	// (y - x)/2
+		setMotorSpeed(rightMotor, (getJoystickValue(ChA) + getJoystickValue(ChB))/2);  	// (y + x)/2
 	}
 }
