@@ -1,6 +1,6 @@
 <Version>1.0.1</Version>
 
-<ProgrammingBlock type="comment">Tank drivbe with single button two motor control</ProgrammingBlock>
+<ProgrammingBlock type="comment">Tank drive with single button two motor control</ProgrammingBlock>
 
 <ProgrammingBlock type="loop" loopType="RepeatForever"/>
 
@@ -16,7 +16,7 @@
     <Parameters>
         <Parameter name="LHS" type="typedef">getJoystickValue(BtnLUp)</Parameter>
         <Parameter name="operator" type="typedef">==</Parameter>
-        <Parameter name="RHS" type="short">1</Parameter>
+        <Parameter name="RHS" type="float">1</Parameter>
     </Parameters>
 </ProgrammingBlock>
 
@@ -40,7 +40,7 @@
     <Parameters>
         <Parameter name="LHS" type="typedef">getJoystickValue(BtnLDown)</Parameter>
         <Parameter name="operator" type="typedef">==</Parameter>
-        <Parameter name="RHS" type="short">1</Parameter>
+        <Parameter name="RHS" type="float">1</Parameter>
     </Parameters>
 </ProgrammingBlock>
 
@@ -94,7 +94,7 @@
 
 task main()
 {
-	// Tank drivbe with single button two motor control
+	// Tank drive with single button two motor control
 	repeat (forever) {
 		tankControl(ChD, ChA, 10);
 		if (getJoystickValue(BtnLUp) == 1) {
