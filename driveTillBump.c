@@ -12,20 +12,21 @@ This program will drive your robot forward for a lnown distance based on motor e
 
 task main()
 {
+	while(getBumperValue(bumper) == 0)	// Loop while robot's bumper/touch sensor isn't pressed in
+	{
+		setMotorSpeed(leftMotor, 50);		//Set the leftMotor (motor1) to half power (50)
+		setMotorSpeed(rightMotor, 50);  //Set the rightMotor (motor6) to half power (50)
+	}
+	//Once the sensor is touched, the program will end and motors will stop.
 
-		float WheelDiameter = 2.5;
-		float Distance = 17;
-		float Clicks= ((Distance/(WheelDiameter*PI))*360);
-
-
+	// now write a way to find your way around the obstacle usign the bumper switch
 		//Reset the current position in the motor encoder to zero.
 		resetMotorEncoder(leftMotor);
 		resetMotorEncoder(rightMotor);
 		//Set motor to run 5000 counts at power level 75.
-		moveMotorTarget(leftMotor, Clicks, 75);
-		moveMotorTarget(rightMotor, Clicks, 75);
+		moveMotorTarget(leftMotor, -360, -75);
+		moveMotorTarget(rightMotor, -360, -75);
 		//Blocking command prevents program from continuing until movement is complete.
 		waitUntilMotorStop(leftMotor);
 		waitUntilMotorStop(rightMotor);
-
 }

@@ -12,8 +12,7 @@ This program will swing turn your lobot right and left
 
 task main()
 {
-	while(true)
-	{
+
 		setMotorSpeed(leftMotor, -100);		//Set the leftMotor (motor1) to full power reverse (-127)
 		setMotorSpeed(rightMotor, 100);  	//Set the rightMotor (motor6) to full power forward (127)
 		sleep(1000);											//Wait for 1 second before continuing on in the program.
@@ -21,5 +20,5 @@ task main()
 		setMotorSpeed(leftMotor, 100);		//Set the leftMotor (motor1) to full power forward (127)
 		setMotorSpeed(rightMotor, -100);  //Set the rightMotor (motor6) to full power reverse (-127)
 		sleep(1000);											//Wait for 1 second before continuing on in the program.
-	}
+
 }
