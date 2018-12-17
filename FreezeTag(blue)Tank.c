@@ -9,7 +9,7 @@
 task main()
 {
 	int Sensor=0;
-	while(1==1)
+	while(true)
 	{
 		Sensor=SensorValue[rightbump];
 		if(Sensor>0)
